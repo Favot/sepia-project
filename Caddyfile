@@ -1,0 +1,11 @@
+your-domain.com {
+    reverse_proxy frontend:3000
+
+    encode gzip
+}
+
+api.your-domain.com {
+    reverse_proxy api:3000
+
+    encode gzip
+}

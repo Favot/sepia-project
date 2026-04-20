@@ -1,0 +1,36 @@
+# Env
+.env
+.env.local
+
+# .NET
+services/**/bin/
+services/**/obj/
+services/**/uploads/
+
+# Node / React
+web-app/node_modules/
+web-app/dist/
+web-app/.wrangler/
+web-app/.nitro/
+web-app/.tanstack/
+web-app/.output/
+web-app/.vinxi/
+web-app/__unconfig*
+web-app/todos.json
+web-app/mcp-todos.json
+
+# IDE
+.vscode/
+.idea/
+*.user
+*.suo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Docker
+docker-compose.override.yml

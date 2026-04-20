@@ -1,0 +1,16 @@
+services:
+  api:
+    image: mcr.microsoft.com/dotnet/sdk:10.0
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      CORS_ORIGINS: http://localhost:5173
+      LlmProvider: ${LlmProvider:-mistral}
+      LlmApiKey: ${LlmApiKey:-}
+      LlmBaseUrl: ${LlmBaseUrl:-https://api.mistral.ai}
+      LlmChatModel: ${LlmChatModel:-mistral-small-latest}
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./services:/app/services
+    working_dir: /app/services/api
+    command: dotnet watch run --project Api.csproj --no-launch-profile --urls "http://0.0.0.0:3000"

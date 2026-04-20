@@ -1,0 +1,10 @@
+web-app/node_modules/
+web-app/.wrangler/
+web-app/.tanstack/
+web-app/dist/
+services/api/bin/
+services/api/obj/
+services/common/bin/
+services/common/obj/
+services/tests/
+.git/
