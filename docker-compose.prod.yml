@@ -7,6 +7,6 @@ services:
       - .env
     environment:
       ASPNETCORE_ENVIRONMENT: Production
-    expose:
-      - "3000"
+    ports:
+      - "3002:3000"
     restart: unless-stopped
