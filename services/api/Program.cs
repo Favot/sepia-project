@@ -24,7 +24,7 @@ builder.Services.AddCors(options =>
     var origins = builder.Configuration["CORS_ORIGINS"] ?? "";
     options.AddDefaultPolicy(policy =>
     {
-        if (!string.IsNullOrEmpty(origins))
+        if (!string.IsNullOrEmpty(origins) && origins.Trim() != "*")
         {
             policy.WithOrigins(origins.Split(',', StringSplitOptions.TrimEntries))
                   .AllowAnyMethod()
