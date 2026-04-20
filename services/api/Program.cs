@@ -44,6 +44,7 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
+app.UseCors();
 app.MapControllers().RequireCors("CorsPolicy");
 app.MapGet("/health", () => Results.Ok("OK"));
 
