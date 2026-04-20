@@ -1,6 +1,7 @@
 # Env
 .env
 .env.local
+.env.prod
 
 # .NET
 services/**/bin/
@@ -34,3 +35,9 @@ Thumbs.db
 
 # Docker
 docker-compose.override.yml
+
+# Alchemy
+.alchemy/
+
+
+node_modules/

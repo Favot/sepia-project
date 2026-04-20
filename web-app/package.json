@@ -2,6 +2,7 @@
   "name": "web-app",
   "private": true,
   "type": "module",
+  "type": "module",
   "imports": {
     "#/*": "./src/*"
   },
@@ -9,7 +10,10 @@
     "dev": "vp dev --port 3000",
     "build": "vp build",
     "preview": "vp preview",
-    "test": "vp test run"
+    "deploy": "alchemy deploy",
+    "cf-typegen": "wrangler types",
+    "test": "vp test run",
+    "vite": "vp"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
@@ -19,6 +23,7 @@
     "@tanstack/react-router-ssr-query": "latest",
     "@tanstack/react-start": "latest",
     "@tanstack/router-plugin": "^1.132.0",
+    "alchemy": "^0.91.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.577.0",
@@ -30,6 +35,8 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.32.3",
+    "@cloudflare/workers-types": "^4.20260420.1",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22.10.2",
     "@types/react": "^19.2.0",
@@ -38,7 +45,8 @@
     "typescript": "^5.7.2",
     "vite": "npm:@voidzero-dev/vite-plus-core@latest",
     "vite-plus": "latest",
-    "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+    "vitest": "npm:@voidzero-dev/vite-plus-test@latest",
+    "wrangler": "^4.83.0"
   },
   "packageManager": "pnpm@10.33.0",
   "pnpm": {

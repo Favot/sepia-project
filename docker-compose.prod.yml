@@ -1,12 +1,4 @@
 services:
-  frontend:
-    build:
-      context: .
-      dockerfile: web-app/Dockerfile
-    expose:
-      - "3000"
-    restart: unless-stopped
-
   api:
     build:
       context: .
