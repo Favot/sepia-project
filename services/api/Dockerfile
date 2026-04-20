@@ -10,5 +10,6 @@ RUN dotnet publish services/api/Api.csproj -c release -o /app
 FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /app
 COPY --from=build /app .
+ENV ASPNETCORE_URLS=http://+:3000
 EXPOSE 3000
 ENTRYPOINT ["dotnet", "Api.dll"]
