@@ -1,5 +1,5 @@
-import { useState, useCallback } from "react";
-import { Copy, Check } from "lucide-react";
+import { Check, Copy } from "lucide-react";
+import { useCallback, useState } from "react";
 
 interface RawOcrPanelProps {
   rawOcr: string;
@@ -33,7 +33,7 @@ export function RawOcrPanel({ rawOcr }: RawOcrPanelProps) {
         </button>
       </div>
       <div className="p-5 bg-card rounded-lg border border-border shadow-sm">
-        <pre className="whitespace-pre-wrap text-sm leading-relaxed text-foreground font-mono max-h-[500px] overflow-y-auto">
+        <pre className="whitespace-pre-wrap text-sm leading-relaxed text-foreground font-mono max-h-125 overflow-y-auto">
           {rawOcr}
         </pre>
       </div>

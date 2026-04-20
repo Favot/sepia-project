@@ -1,4 +1,4 @@
-import { File, X, Loader2 } from "lucide-react";
+import { File, Loader2, X } from "lucide-react";
 
 interface FilePreviewProps {
   file: File;
@@ -7,20 +7,25 @@ interface FilePreviewProps {
   onUpload: () => void;
 }
 
-export function FilePreview({ file, isUploading, onRemove, onUpload }: FilePreviewProps) {
+export function FilePreview({
+  file,
+  isUploading,
+  onRemove,
+  onUpload,
+}: FilePreviewProps) {
   return (
     <div className="mt-6">
       <div className="flex items-center justify-between p-3 bg-card rounded border border-border">
         <div className="flex items-center gap-3 overflow-hidden">
-          <File className="h-5 w-5 text-muted-foreground flex-shrink-0" />
+          <File className="h-5 w-5 text-muted-foreground shrink-0" />
           <span className="truncate text-foreground">{file.name}</span>
-          <span className="text-sm text-muted-foreground flex-shrink-0">
+          <span className="text-sm text-muted-foreground shrink-0">
             ({(file.size / 1024).toFixed(1)} Ko)
           </span>
         </div>
         <button
           onClick={onRemove}
-          className="p-1 hover:bg-muted rounded flex-shrink-0 text-foreground"
+          className="p-1 hover:bg-muted rounded shrink-0 text-foreground"
         >
           <X className="h-4 w-4" />
         </button>
