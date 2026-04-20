@@ -22,7 +22,7 @@ builder.Services.AddSingleton<IMistralClient>(sp =>
 builder.Services.AddCors(options =>
 {
     var origins = builder.Configuration["CORS_ORIGINS"] ?? "";
-    options.AddDefaultPolicy(policy =>
+    options.AddPolicy("CorsPolicy", policy =>
     {
         if (!string.IsNullOrEmpty(origins) && origins.Trim() != "*")
         {
@@ -44,8 +44,7 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-app.UseCors();
-app.MapControllers();
+app.MapControllers().RequireCors("CorsPolicy");
 app.MapGet("/health", () => Results.Ok("OK"));
 
 app.Run();
